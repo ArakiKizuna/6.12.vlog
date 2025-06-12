@@ -1,0 +1,24 @@
+# 核心依赖 - 基于本地环境测试结果
+streamlit==1.45.1
+pandas==2.2.2
+numpy==1.26.4
+matplotlib==3.9.2
+seaborn==0.13.2
+
+# 机器学习
+torch>=2.6.0
+torchvision>=0.21.0
+scikit-learn==1.5.1
+
+# 数据存储
+h5py==3.11.0
+
+# 可选依赖（在Streamlit Cloud中可能不可用）
+# opencv-python>=4.11.0
+# librosa>=0.11.0
+
+# 注意：
+# 1. opencv-python和librosa在Streamlit Cloud中可能有问题
+# 2. 应用会自动检测这些库的可用性
+# 3. 如果不可用，会使用基于文件名的确定性特征提取
+# 4. 建议在Streamlit Cloud部署时注释掉opencv-python和librosa 
