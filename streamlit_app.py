@@ -58,7 +58,7 @@ def set_deterministic_seed(seed=42):
 set_deterministic_seed(42)
 
 # 设置matplotlib中文字体
-plt.rcParams['font.sans-serif'] = ['SimHei', 'DejaVu Sans']
+plt.rcParams['font.sans-serif'] = ['Microsoft YaHei', 'SimHei', 'DejaVu Sans']
 plt.rcParams['axes.unicode_minus'] = False
 
 # 设置设备
@@ -883,8 +883,8 @@ with tab1:
                             video_emotion_probs[emotions.index(video_emotion)] = video_emotion_confidence
                             
                             bars1 = ax1.bar(emotions, video_emotion_probs, color=[EMOTION_COLORS.get(e, "#CCCCCC") for e in emotions], alpha=0.7)
-                            ax1.set_title('视频情感分析', fontsize=14, fontweight='bold')
-                            ax1.set_ylabel('置信度', fontsize=12)
+                            ax1.set_title('Video Emotion Analysis', fontsize=14, fontweight='bold')
+                            ax1.set_ylabel('Confidence', fontsize=12)
                             ax1.set_ylim(0, 1)
                             
                             # 添加数值标签
@@ -904,8 +904,8 @@ with tab1:
                             audio_emotion_probs[emotions.index(audio_emotion)] = audio_emotion_confidence
                             
                             bars2 = ax2.bar(emotions, audio_emotion_probs, color=[EMOTION_COLORS.get(e, "#CCCCCC") for e in emotions], alpha=0.7)
-                            ax2.set_title('BGM情感分析', fontsize=14, fontweight='bold')
-                            ax2.set_ylabel('置信度', fontsize=12)
+                            ax2.set_title('BGM Emotion Analysis', fontsize=14, fontweight='bold')
+                            ax2.set_ylabel('Confidence', fontsize=12)
                             ax2.set_ylim(0, 1)
                             
                             # 添加数值标签
@@ -1041,9 +1041,9 @@ with tab2:
                         colors = [EMOTION_COLORS[emotion] for emotion in emotions]
                         
                         bars = ax1.bar(range(len(bgm_names)), match_probs, color=colors, alpha=0.7)
-                        ax1.set_title('BGM匹配度分析', fontsize=14, fontweight='bold')
-                        ax1.set_xlabel('BGM文件', fontsize=12)
-                        ax1.set_ylabel('匹配概率', fontsize=12)
+                        ax1.set_title('BGM Match Probability Analysis', fontsize=14, fontweight='bold')
+                        ax1.set_xlabel('BGM File', fontsize=12)
+                        ax1.set_ylabel('Match Probability', fontsize=12)
                         ax1.set_xticks(range(len(bgm_names)))
                         ax1.set_xticklabels([name[:15] + '...' if len(name) > 15 else name for name in bgm_names], rotation=45)
                         ax1.set_ylim(0, 1)
@@ -1066,7 +1066,7 @@ with tab2:
                             
                             ax2.pie(emotion_values, labels=emotion_labels, colors=emotion_colors, 
                                    autopct='%1.1f%%', startangle=90)
-                            ax2.set_title('BGM情感分布', fontsize=14, fontweight='bold')
+                            ax2.set_title('BGM Emotion Distribution', fontsize=14, fontweight='bold')
                         
                         plt.tight_layout()
                         st.pyplot(fig)
